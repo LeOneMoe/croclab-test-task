@@ -1,1 +1,48 @@
-ДОБРОЕ УТРО, СЛАВЯЕНЕ
+    {>"layout" /}
+
+    {<body}
+        <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#fromModal">
+            Upload Image
+        </button>
+        <br />
+
+        {#pictures}
+            <div class="well">
+                <h4>{picture_name}
+                <button class="btn btn-default pull-right" data-toggle="collapse" href="#picture_{picture_id}" aria-expanded="false" aria-controls="picture_{picture_id}">
+                <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+                </button></h4>
+                <div class="collapse" id="picture_{picture_id}">
+                IMAGE WAS HERE
+                <br />
+                <hr />
+                <img src="3v1mIuFePq8.jpg" alt="IMAGE IS HERE">
+                <br />
+                <button class="btn btn-danger delete-image">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </button>
+                </div>
+            </div>
+        {/pictures}
+
+        <!-- Upload Image Modal -->
+        <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form method="post" action="/add">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Upload Image</h4>
+                      </div>
+                      <div class="modal-body">
+                        ...
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    {/body}

@@ -2,13 +2,14 @@ var express = require("express"),
     path = require("path"),
     bodyParser =  require("body-parser"),
     cons = require("consolidate"),
-    dust = require("dustjs-helpers"),
-    pg = require("pg");
+    dust = require("dustjs-helpers");
 
 var app = express();
 
 // Connect to DB
 var connect = 'postgresql://slavyane:1101@localhost/image-storage';
+const { Pool, Client } = require('pg');
+const pool = new Pool({ connectionString: connect, });
 
 // Assign dust
 app.engine("dust", cons.dust);
@@ -26,8 +27,32 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Request
 app.get("/", function (req, res) {
-    console.log("TEST");
-    res.render("index");
+    pool.connect(function (err, client, done) {
+        if(err) { return console.error("error fetching client from pool;", err); }
+
+        // Fetching Data From DB
+        client.query("SELECT * FROM pictures", function (err, result) {
+            if (err) { return console.error("error running query", err); }
+
+            res.render("index", {pictures: result.rows});
+            done();
+        });
+    });
+});
+
+
+app.get("/log", function (req, res) {
+    pool.connect(function (err, client, done) {
+        if(err) { return console.error("error fetching client from pool;", err); }
+
+        // Fetching Data From DB
+        client.query("SELECT * FROM users", function (err, result) {
+            if (err) { return console.error("error running query", err); }
+
+            res.render("index_log", {users: result.rows});
+            done();
+        });
+    });
 });
 
 // Server

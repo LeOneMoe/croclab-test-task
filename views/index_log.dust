@@ -1,0 +1,9 @@
+{>"layout" /}
+
+{<body}
+    {#users}
+        <div class="well">
+            <h6>{nickname} uploaded picture({picture_id}) at {upload_date}</h6>
+        </div>
+    {/users}
+{/body}
