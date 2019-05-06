@@ -2,9 +2,11 @@ var express = require("express"),
     path = require("path"),
     bodyParser =  require("body-parser"),
     cons = require("consolidate"),
-    dust = require("dustjs-helpers");
+    dust = require("dustjs-helpers"),
+    http = require('http'),
+    app = express();
 
-var app = express();
+var port = 8080;
 
 // Connect to DB
 var connect = 'postgresql://slavyane:1101@localhost/image-storage';
@@ -56,6 +58,6 @@ app.get("/log", function (req, res) {
 });
 
 // Server
-app.listen(3000, function () {
-    console.log("Server Started On Port 3000");
+app.listen(port, function () {
+    console.log("Server Started On Port 8080");
 });

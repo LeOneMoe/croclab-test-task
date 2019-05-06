@@ -13,17 +13,15 @@
                 <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
                 </button></h4>
                 <div class="collapse" id="picture_{picture_id}">
-                IMAGE WAS HERE
-                <br />
+                <img src="../images/{picture_path}" width="300" alt="{picture_path}">
                 <hr />
-                <img src="3v1mIuFePq8.jpg" alt="IMAGE IS HERE">
-                <br />
                 <button class="btn btn-danger delete-image">
                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                 </button>
                 </div>
             </div>
         {/pictures}
+
 
         <!-- Upload Image Modal -->
         <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel">
