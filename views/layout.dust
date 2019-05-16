@@ -5,27 +5,27 @@
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/style.css">
         <script>
-                        $(document).ready(function () {
-                            var options = {
-                                beforeSubmit: showRequest,  // pre-submit callback
-                                success: showResponse  // post-submit callback
-                            };
+        $(document).ready(function () {
+            var options = {
+                beforeSubmit: showRequest,  // pre-submit callback
+                success: showResponse  // post-submit callback
+            };
 
-                            $('#frmUploader').submit(function () {
-                                $(this).ajaxSubmit(options);
-                                // always return false to prevent standard browser submit and page navigation
-                                return false;
-                            });
-                        });
+            $('#frmUploader').submit(function () {
+                $(this).ajaxSubmit(options);
+                // always return false to prevent standard browser submit and page navigation
+                return false;
+            });
+        });
 
-                        function showRequest(formData, jqForm, options) {
-                            alert('Uploading is starting.');
-                            return true;
-                        }
+        function showRequest(formData, jqForm, options) {
+            alert('Uploading is starting.');
+            return true;
+        }
 
-                        function showResponse(responseText, statusText, xhr, $form) {
-                            alert('status: ' + statusText + '\n\nresponseText: \n' + responseText );
-                        }
+        function showResponse(responseText, statusText, xhr, $form) {
+            alert('status: ' + statusText + '\n\nresponseText: \n' + responseText );
+        }
         </script>
 </head>
 <body>
@@ -39,6 +39,7 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="/js/bootstrap.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>
 </html>

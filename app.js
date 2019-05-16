@@ -116,6 +116,18 @@ app.post("/upload", function (req, res) {
     res.redirect("/");
 });
 
+// Remove Picture
+app.delete('/delete/:picture_id', function (req, res) {
+    pool.connect(function (err, client, done) { if(err) { return console.error("error fetching client from pool;", err); }
+
+        client.query("DELETE FROM pictures WHERE picture_id = $1", [req.params.picture_id]);
+        client.query("DELETE FROM users WHERE picture_id = $1", [req.params.picture_id]);
+
+        done();
+        res.sendStatus(200);
+    });
+});
+
 // Server
 app.listen(port, function () {
     console.log("Server Started On Port " + port);

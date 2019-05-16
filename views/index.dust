@@ -15,8 +15,8 @@
                 <div class="collapse" id="picture_{picture_id}">
                 <img src="../images/{picture_path}" width="300" alt="{picture_path}">
                 <hr />
-                <button class="btn btn-danger delete-image">
-                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                <button class="btn btn-danger delete-picture" data-id="{picture_id}">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                 </button>
                 </div>
             </div>
