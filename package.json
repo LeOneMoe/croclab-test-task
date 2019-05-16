@@ -15,11 +15,13 @@
   "dependencies": {
     "body-parser": "*",
     "bootstrap": "^4.3.1",
+    "connect-multiparty": "*",
     "consolidate": "*",
     "dust": "*",
     "dustjs-helpers": "*",
     "dustjs-linkedin": "*",
     "express": "*",
+    "multer": "^1.4.1",
     "pg": "^7.10.0"
   },
   "bugs": {

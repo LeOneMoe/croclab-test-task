@@ -22,4 +22,8 @@ INSERT INTO pictures (picture_id, picture_name, picture_path) VALUES
 ((SELECT count(users.picture_id) FROM users), 'comfy_pisi', 'xzR8clG541U.jpg');
 
 
+DELETE FROM pictures;
+DELETE FROM users;
+
+
 SELECT lo_export(pict.pick, 'C:\Users\Nps\Downloads\test\testers.jpg') FROM pict WHERE pict.p_name = 'ы.jpg';
